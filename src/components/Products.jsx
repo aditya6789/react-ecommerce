@@ -147,7 +147,7 @@ const Products = () => {
                     {product.description.substring(0, 100)}...
                   </p>
                   <div className="price fw-bold text-primary mb-3">
-                    ${product.price}
+                    ₹{product.price}
                   </div>
                   <div className="d-flex gap-2 mt-auto">
                     <Link
