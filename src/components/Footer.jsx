@@ -56,7 +56,7 @@ const Footer = () => {
               <h6 className="fw-bold text-white mb-4">Contact Info</h6>
               <div className="mb-3">
                 <i className="fas fa-map-marker-alt me-2"></i>
-                123 Fashion Street, Style City, SC 12345
+             SHOP NO. SB-38, LAKE CITY MALL, BKAPUBAVADI GB ROAD, Chitalsar Manpada, Thane – 400607, Maharashtra, India
               </div>
               <div className="mb-3">
                 <i className="fas fa-phone me-2"></i>
