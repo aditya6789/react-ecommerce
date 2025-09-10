@@ -162,7 +162,7 @@ const Register = () => {
                                                 required
                                             />
                                             <label className="form-check-label" htmlFor="terms">
-                                                I agree to the <button type="button" className="btn-link text-decoration-none p-0 border-0 bg-transparent">Terms & Conditions</button> and <button type="button" className="btn-link text-decoration-none p-0 border-0 bg-transparent">Privacy Policy</button>
+                                                I agree to the <Link to="/terms" className="text-decoration-none fw-bold">Terms & Conditions</Link> and <Link to="/privacy" className="text-decoration-none fw-bold">Privacy Policy</Link>
                                             </label>
                                         </div>
                                     </div>

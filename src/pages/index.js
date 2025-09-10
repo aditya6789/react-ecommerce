@@ -9,3 +9,5 @@ export { default as Register } from './Register';
 export { default as Checkout } from './Checkout';
 export { default as PageNotFound } from './PageNotFound';
 export { default as Profile } from './Profile';
+export { default as TermsConditions } from './TermsConditions';
+export { default as PrivacyPolicy } from './PrivacyPolicy';

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,18 +17,18 @@ const Footer = () => {
                 We bring you quality and style at unbeatable prices.
               </p>
               <div className="d-flex gap-3">
-                <a href="#" className="text-decoration-none">
+                <button className="btn btn-link text-decoration-none p-0 border-0 bg-transparent">
                   <i className="fab fa-facebook-f fa-lg"></i>
-                </a>
-                <a href="#" className="text-decoration-none">
+                </button>
+                <button className="btn btn-link text-decoration-none p-0 border-0 bg-transparent">
                   <i className="fab fa-twitter fa-lg"></i>
-                </a>
-                <a href="#" className="text-decoration-none">
+                </button>
+                <button className="btn btn-link text-decoration-none p-0 border-0 bg-transparent">
                   <i className="fab fa-instagram fa-lg"></i>
-                </a>
-                <a href="#" className="text-decoration-none">
+                </button>
+                <button className="btn btn-link text-decoration-none p-0 border-0 bg-transparent">
                   <i className="fab fa-linkedin-in fa-lg"></i>
-                </a>
+                </button>
               </div>
             </div>
             
@@ -44,10 +45,10 @@ const Footer = () => {
             <div className="col-lg-2 col-md-6">
               <h6 className="fw-bold text-white mb-4">Categories</h6>
               <ul className="list-unstyled">
-                <li className="mb-2"><a href="#" className="text-decoration-none">Men's Fashion</a></li>
-                <li className="mb-2"><a href="#" className="text-decoration-none">Women's Fashion</a></li>
-                <li className="mb-2"><a href="#" className="text-decoration-none">Electronics</a></li>
-                <li className="mb-2"><a href="#" className="text-decoration-none">Jewelry</a></li>
+                <li className="mb-2"><button className="btn btn-link text-decoration-none p-0 border-0 bg-transparent">Men's Fashion</button></li>
+                <li className="mb-2"><button className="btn btn-link text-decoration-none p-0 border-0 bg-transparent">Women's Fashion</button></li>
+                <li className="mb-2"><button className="btn btn-link text-decoration-none p-0 border-0 bg-transparent">Electronics</button></li>
+                <li className="mb-2"><button className="btn btn-link text-decoration-none p-0 border-0 bg-transparent">Jewelry</button></li>
               </ul>
             </div>
             
@@ -78,9 +79,9 @@ const Footer = () => {
             </div>
             <div className="col-md-6 text-md-end">
               <div className="d-flex justify-content-md-end gap-4 mt-3 mt-md-0">
-                <a href="#" className="text-decoration-none small">Privacy Policy</a>
-                <a href="#" className="text-decoration-none small">Terms of Service</a>
-                <a href="#" className="text-decoration-none small">Support</a>
+                <Link to="/privacy" className="text-decoration-none small">Privacy Policy</Link>
+                <Link to="/terms" className="text-decoration-none small">Terms of Service</Link>
+                <Link to="/contact" className="text-decoration-none small">Support</Link>
               </div>
             </div>
           </div>

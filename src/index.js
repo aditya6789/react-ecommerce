@@ -20,6 +20,8 @@ import {
   Checkout,
   PageNotFound,
   Profile,
+  TermsConditions,
+  PrivacyPolicy,
 } from "./pages";
 import ScrollToTop from "./components/ScrollToTop";
 import { ProtectedRoute } from "./components";
@@ -40,6 +42,8 @@ root.render(
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/terms" element={<TermsConditions />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route 
               path="/profile" 
               element={
