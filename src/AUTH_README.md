@@ -31,7 +31,7 @@ This React E-Commerce application includes a complete authentication system usin
 
 ### 1. **Demo Account**
 A demo account is automatically created:
-- **Email**: `demo@stylestore.com`
+- **Email**: `demo@Styloc .com`
 - **Password**: `demo123`
 
 ### 2. **Registration**

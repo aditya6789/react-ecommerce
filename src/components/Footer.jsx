@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="col-lg-4 col-md-6">
               <h5 className="fw-bold text-white mb-4">
                 <i className="fas fa-shopping-bag me-2"></i>
-                StyleStore
+                Styloc 
               </h5>
               <p className="mb-4">
                 Your one-stop destination for premium fashion, electronics, and lifestyle products. 

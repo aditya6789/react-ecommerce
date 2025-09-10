@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
       const demoUser = {
         id: 'demo-user-001',
         name: 'Demo User',
-        email: 'demo@stylestore.com',
+        email: 'demo@Styloc .com',
         password: 'demo123',
         createdAt: new Date().toISOString(),
         avatar: 'https://ui-avatars.com/api/?name=Demo+User&background=6366f1&color=fff'
@@ -102,7 +102,7 @@ export const AuthProvider = ({ children }) => {
       setUser(userToStore);
       localStorage.setItem('currentUser', JSON.stringify(userToStore));
 
-      toast.success('Account created successfully! Welcome to StyleStore!');
+      toast.success('Account created successfully! Welcome to Styloc !');
       return true;
     } catch (error) {
       console.error('Registration error:', error);

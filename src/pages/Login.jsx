@@ -49,7 +49,7 @@ const Login = () => {
   // Demo account helper
   const fillDemoAccount = () => {
     setFormData({
-      email: 'demo@stylestore.com',
+      email: 'demo@Styloc .com',
       password: 'demo123'
     });
   };
@@ -173,7 +173,7 @@ const Login = () => {
                       <i className="fas fa-play me-2"></i>
                       Try Demo Account
                     </button>
-                    <small className="text-muted d-block mt-1">Email: demo@stylestore.com | Password: demo123</small>
+                    <small className="text-muted d-block mt-1">Email: demo@Styloc .com | Password: demo123</small>
                   </div>
                   
                   <p className="text-muted mb-3">Or continue with</p>
