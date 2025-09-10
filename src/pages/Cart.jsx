@@ -8,6 +8,12 @@ const Cart = () => {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
 
+  const usdToInr = (usd) => {
+    // You can update the rate as needed, here using 1 USD = 83 INR
+    const rate = 83;
+    return Math.round(usd * rate);
+  };
+
   const EmptyCart = () => {
     return (
       <div className="container">
@@ -84,7 +90,7 @@ const Cart = () => {
                           <div className="col-md-4 col-8">
                             <h6 className="fw-bold mb-1">{item.title.substring(0, 40)}...</h6>
                             <p className="text-muted small mb-0">Category: {item.category}</p>
-                            <div className="text-primary fw-bold">${item.price}</div>
+                            <div className="text-primary fw-bold">₹{usdToInr(item.price)  }</div>
                           </div>
 
                           <div className="col-md-4 col-8 mt-3 mt-md-0">
@@ -102,12 +108,12 @@ const Cart = () => {
                               >
                                 <i className="fas fa-plus"></i>
                               </button>
-                            </div>
+                            </div>  
                           </div>
 
                           <div className="col-md-2 col-4 text-end mt-3 mt-md-0">
                             <div className="fw-bold text-success">
-                              ${(item.price * item.qty).toFixed(2)}
+                              ₹{usdToInr(item.price * item.qty).toFixed(2)}
                             </div>
                           </div>
                         </div>
@@ -126,7 +132,7 @@ const Cart = () => {
                   
                   <div className="modern-summary-item">
                     <span>Products ({totalItems})</span>
-                    <span className="fw-bold">${Math.round(subtotal)}</span>
+                    <span className="fw-bold">₹{usdToInr(subtotal)}</span>
                   </div>
                   
                   <div className="modern-summary-item">
@@ -134,17 +140,17 @@ const Cart = () => {
                       <i className="fas fa-shipping-fast me-2 text-success"></i>
                       Shipping
                     </span>
-                    <span className="fw-bold">${shipping}</span>
+                    <span className="fw-bold">₹{usdToInr(shipping)}</span>
                   </div>
                   
                   <div className="modern-summary-item">
                     <span>Tax</span>
-                    <span className="fw-bold">$0</span>
+                    <span className="fw-bold">₹{usdToInr(0)}</span>
                   </div>
                   
                   <div className="modern-summary-item border-0 pt-3">
                     <span className="h5 mb-0">Total</span>
-                    <span className="h5 mb-0 text-primary">${Math.round(subtotal + shipping)}</span>
+                      <span className="h5 mb-0 text-primary">₹{usdToInr(subtotal + shipping)}</span>
                   </div>
 
                   <Link

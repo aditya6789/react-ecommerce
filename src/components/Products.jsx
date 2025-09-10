@@ -8,9 +8,16 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
+// Helper function to convert USD to INR
+const usdToInr = (usd) => {
+  // You can update the rate as needed, here using 1 USD = 83 INR
+  const rate = 83;
+  return Math.round(usd * rate);
+};
+
 const Products = () => {
   const [data, setData] = useState([]);
-  const [filter, setFilter] = useState(data);
+  const [filter, setFilter] = useState([]);
   const [loading, setLoading] = useState(false);
   const componentMounted = useRef(true);
 
@@ -25,8 +32,15 @@ const Products = () => {
       setLoading(true);
       const response = await fetch("https://fakestoreapi.com/products/");
       if (componentMounted.current) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+        const allProducts = await response.json();
+        // Only keep clothing products
+        const clothingProducts = allProducts.filter(
+          (item) =>
+            item.category === "men's clothing" ||
+            item.category === "women's clothing"
+        );
+        setData(clothingProducts);
+        setFilter(clothingProducts);
         setLoading(false);
       }
     };
@@ -82,7 +96,7 @@ const Products = () => {
               onClick={() => setFilter(data)}
             >
               <i className="fas fa-th me-2"></i>
-              All Products
+              All Clothing
             </button>
             <button
               className="modern-filter-btn"
@@ -97,20 +111,6 @@ const Products = () => {
             >
               <i className="fas fa-female me-2"></i>
               Women's Clothing
-            </button>
-            <button
-              className="modern-filter-btn"
-              onClick={() => filterProduct("jewelery")}
-            >
-              <i className="fas fa-gem me-2"></i>
-              Jewelry
-            </button>
-            <button
-              className="modern-filter-btn"
-              onClick={() => filterProduct("electronics")}
-            >
-              <i className="fas fa-laptop me-2"></i>
-              Electronics
             </button>
           </div>
         </div>
@@ -147,7 +147,7 @@ const Products = () => {
                     {product.description.substring(0, 100)}...
                   </p>
                   <div className="price fw-bold text-primary mb-3">
-                    ${product.price}
+                    ₹{usdToInr(product.price)}
                   </div>
                   <div className="d-flex gap-2 mt-auto">
                     <Link
@@ -187,8 +187,8 @@ const Products = () => {
       <section id="products" className="py-5">
         <div className="container">
           <div className="text-center mb-5 fade-in-up">
-            <h2 className="display-4 fw-bold text-gradient mb-3">Latest Products</h2>
-            <p className="lead text-muted">Discover our handpicked selection of premium products</p>
+            <h2 className="display-4 fw-bold text-gradient mb-3">Latest Clothing</h2>
+            <p className="lead text-muted">Discover our handpicked selection of premium clothing</p>
           </div>
           <div className="row justify-content-center">
             {loading ? <Loading /> : <ShowProducts />}

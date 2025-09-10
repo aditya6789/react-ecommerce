@@ -20,6 +20,14 @@ const Product = () => {
     dispatch(addCart(product));
   };
 
+  // Helper function to convert USD to INR
+const usdToInr = (usd) => {
+  // You can update the rate as needed, here using 1 USD = 83 INR
+  const rate = 83;
+  return Math.round(usd * rate);
+};
+
+
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
@@ -99,8 +107,8 @@ const Product = () => {
               </div>
               
               <div className="mb-4">
-                <span className="h2 fw-bold text-primary">${product.price}</span>
-                <span className="text-muted ms-2">Free shipping on orders over $50</span>
+                <span className="h2 fw-bold text-primary">₹{usdToInr(product.price)}</span>
+                <span className="text-muted ms-2">Free shipping on orders over ₹500</span>
               </div>
               
               <div className="mb-4">
@@ -218,7 +226,7 @@ const Product = () => {
                       {item.title.substring(0, 25)}...
                     </h6>
                     <div className="price fw-bold text-primary mb-3">
-                      ${item.price}
+                        ₹{usdToInr(item.price)}
                     </div>
                     <div className="d-grid gap-2">
                       <Link
