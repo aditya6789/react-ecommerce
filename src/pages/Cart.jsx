@@ -84,7 +84,7 @@ const Cart = () => {
                           <div className="col-md-4 col-8">
                             <h6 className="fw-bold mb-1">{item.title.substring(0, 40)}...</h6>
                             <p className="text-muted small mb-0">Category: {item.category}</p>
-                            <div className="text-primary fw-bold">${item.price}</div>
+                            <div className="text-primary fw-bold">₹{item.price}</div>
                           </div>
 
                           <div className="col-md-4 col-8 mt-3 mt-md-0">
@@ -107,7 +107,7 @@ const Cart = () => {
 
                           <div className="col-md-2 col-4 text-end mt-3 mt-md-0">
                             <div className="fw-bold text-success">
-                              ${(item.price * item.qty).toFixed(2)}
+                              ₹{(item.price * item.qty).toFixed(2)}
                             </div>
                           </div>
                         </div>
@@ -126,7 +126,7 @@ const Cart = () => {
                   
                   <div className="modern-summary-item">
                     <span>Products ({totalItems})</span>
-                    <span className="fw-bold">${Math.round(subtotal)}</span>
+                    <span className="fw-bold">₹{Math.round(subtotal)}</span>
                   </div>
                   
                   <div className="modern-summary-item">
@@ -134,17 +134,17 @@ const Cart = () => {
                       <i className="fas fa-shipping-fast me-2 text-success"></i>
                       Shipping
                     </span>
-                    <span className="fw-bold">${shipping}</span>
+                    <span className="fw-bold">₹{shipping}</span>
                   </div>
                   
                   <div className="modern-summary-item">
                     <span>Tax</span>
-                    <span className="fw-bold">$0</span>
+                    <span className="fw-bold">₹0</span>
                   </div>
                   
                   <div className="modern-summary-item border-0 pt-3">
                     <span className="h5 mb-0">Total</span>
-                    <span className="h5 mb-0 text-primary">${Math.round(subtotal + shipping)}</span>
+                    <span className="h5 mb-0 text-primary">₹{Math.round(subtotal + shipping)}</span>
                   </div>
 
                   <Link
